@@ -1,0 +1,28 @@
+# Development
+src/demo
+.vscode
+.idea
+*.log
+.DS_Store
+
+# Build config
+vite.config.ts
+tsconfig.json
+postcss.config.js
+tailwind.config.js
+.gitignore
+
+# Source
+src
+!dist
+!dist/styles.css
+
+# Tests
+coverage
+*.test.*
+*.spec.*
+
+# Misc
+.editorconfig
+.eslintrc
+.prettierrc
