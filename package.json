@@ -1,6 +1,6 @@
 {
   "name": "react-open-modal-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A customizable React modal component with Tailwind CSS",
   "main": "dist/index.js",
@@ -40,12 +40,18 @@
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.0.0"
   },
-  "keywords": ["react", "modal", "dialog", "tailwindcss", "typescript"],
+  "keywords": [
+    "react",
+    "modal",
+    "dialog",
+    "tailwindcss",
+    "typescript"
+  ],
   "author": "Das422",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Das422/react-open-modal-js"
+    "url": "git+https://github.com/Das422/react-open-modal-js.git"
   },
   "bugs": {
     "url": "https://github.com/Das422/react-open-modal-js/issues"

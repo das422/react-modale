@@ -1,6 +1,16 @@
 # React Open Modal JS
 
-A lightweight, customizable React modal component with Tailwind CSS.
+A lightweight, accessible React modal component with Tailwind CSS styling.
+
+## Features
+
+- 🎯 Simple and lightweight
+- ⌨️ Keyboard accessibility (ESC to close)
+- 🖱️ Click outside to close
+- 🎨 Customizable with Tailwind classes
+- 🌟 Clean, modern design
+- 📱 Responsive
+- 💪 TypeScript support
 
 ## Installation
 
@@ -57,9 +67,7 @@ function App() {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         text="This is a modal"
-        backgroundColor="#157846"
-        textColor="#fff"
-        iconColor="#fff"
+        className="bg-blue-500 text-white" // Optional custom styling
       />
     </div>
   );
@@ -68,14 +76,42 @@ function App() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| text | string | required | Modal content |
-| isOpen | boolean | required | Controls visibility |
-| onClose | function | required | Close handler |
-| textColor | string | "#fff" | Text color |
-| backgroundColor | string | "#157846" | Background color |
-| iconColor | string | "#000" | Close icon color |
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| text | string | Yes | The text content to display in the modal |
+| isOpen | boolean | Yes | Controls whether the modal is visible |
+| onClose | () => void | Yes | Function to call when the modal should close |
+| className | string | No | Additional CSS classes for custom styling |
+
+## Styling
+
+The modal comes with a clean, modern design using Tailwind CSS. You can customize its appearance using the `className` prop:
+
+```jsx
+<Modal
+  isOpen={isOpen}
+  onClose={handleClose}
+  text="Custom styled modal"
+  className="bg-purple-600 text-white p-12 rounded-xl"
+/>
+```
+
+Default styling includes:
+- White background
+- Rounded corners
+- Drop shadow
+- Responsive padding
+- Semi-transparent backdrop
+- Smooth hover transitions
+
+## Features
+
+- Closes on ESC key press
+- Closes when clicking outside
+- Accessible close button
+- Portal-based rendering for proper stacking
+- Prevents event bubbling
+- Modern, clean design
 
 ## License
 
