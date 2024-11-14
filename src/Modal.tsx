@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { ModalProps } from "./types";
 
@@ -9,6 +9,13 @@ export const Modal: React.FC<ModalProps> = ({
   onClose,
   className = "",
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -18,14 +25,19 @@ export const Modal: React.FC<ModalProps> = ({
 
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = 'hidden';
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = '';
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
+
+  const portalTarget = document.body;
+  if (!portalTarget) return null;
 
   return createPortal(
     <div
@@ -46,6 +58,6 @@ export const Modal: React.FC<ModalProps> = ({
         <p className="text-2xl font-medium pr-8">{text}</p>
       </div>
     </div>,
-    document.body
+    portalTarget
   );
 };

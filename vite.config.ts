@@ -25,9 +25,9 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
           'lucide-react': 'LucideReact',
         },
-        assetFileNames: 'styles.css'
       },
     },
     cssCodeSplit: false,
+    sourcemap: true,
   },
 });

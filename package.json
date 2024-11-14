@@ -1,11 +1,12 @@
 {
   "name": "react-open-modal-js",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "type": "module",
   "description": "A customizable React modal component with Tailwind CSS",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "style": "dist/style.css",
   "files": [
     "dist",
     "LICENSE",
@@ -56,5 +57,13 @@
   "bugs": {
     "url": "https://github.com/Das422/react-open-modal-js/issues"
   },
-  "homepage": "https://github.com/Das422/react-open-modal-js#readme"
+  "homepage": "https://github.com/Das422/react-open-modal-js#readme",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  }
 }

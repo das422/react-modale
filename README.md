@@ -51,6 +51,8 @@ module.exports = {
 
 ## Usage
 
+1. Import both the component and its styles:
+
 ```jsx
 import { Modal } from 'react-open-modal-js';
 
